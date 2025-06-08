@@ -32,4 +32,13 @@ jobs:
         username: 'vicpradochaves'
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.18.0
+      with:
+        # List of tags
+        tags: 'latest'
+        # Contexto de onde a action esta sendo executada
+        context: .
+        push: true
           
