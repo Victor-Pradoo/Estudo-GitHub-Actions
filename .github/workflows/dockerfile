@@ -1,0 +1,11 @@
+from mcr.microsoft.com/dotnet/sdk:8.0 as build-env
+workdir /App
+
+copy . ./
+run dotnet restore
+run dotnet publish -c Release -o out
+
+from mcr.microsoft.com/dotnet/aspnet:8.0
+workdir /App
+copy --from=build-env /App/out .
+entrypoint ["dotnet", "DotNet.Docker.dll"]
