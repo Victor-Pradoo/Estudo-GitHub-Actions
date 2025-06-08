@@ -15,7 +15,7 @@ jobs:
   test_job:
     name: Executando job de teste
     # The type of runner that the job will run on(neste caso estou pegando a versão mais recente do ubuntu)
-    runs-on: self-hosted
+    runs-on: ubuntu-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,8 +32,4 @@ jobs:
         username: 'vicpradochaves'
         # Password or personal access token used to log against the Docker registry
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        # Specifies whether the given registry is ECR (auto, true or false)
-        ecr: # optional, default is auto
-        # Log out from the Docker registry at the end of a job
-        logout: # optional, default is true
           
