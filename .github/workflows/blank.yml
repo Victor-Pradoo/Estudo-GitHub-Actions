@@ -39,6 +39,7 @@ jobs:
         # List of tags
         tags: 'latest'
         # Contexto de onde a action esta sendo executada
-        context: '.github\workflows\dockerfile'
+        context: .
+        file: .github/workflows/dockerfile
         push: true
           
