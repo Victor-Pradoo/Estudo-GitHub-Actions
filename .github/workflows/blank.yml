@@ -23,6 +23,17 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Executando um comando simples
-      run: echo Olá Mund o 
+    - name: Docker Login
+
+      uses: docker/login-action@v3.4.0
+      with:
+      
+        # Username used to log against the Docker registry
+        username: 'vicpradochaves'
+        # Password or personal access token used to log against the Docker registry
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        # Specifies whether the given registry is ECR (auto, true or false)
+        ecr: # optional, default is auto
+        # Log out from the Docker registry at the end of a job
+        logout: # optional, default is true
+          
