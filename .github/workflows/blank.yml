@@ -36,7 +36,7 @@ jobs:
       uses: docker/build-push-action@v6.18.0
       with:
         # List of tags
-        tags: 'latest'
+        tags: 'vicpradochaves/fiap-ghactions:latest'
         # Contexto de onde a action esta sendo executada
         context: .
         file: .github/workflows/dockerfile
